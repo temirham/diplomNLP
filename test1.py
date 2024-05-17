@@ -5,7 +5,7 @@ from sklearn.svm import SVC
 from sklearn.metrics import accuracy_score
 
 # Загрузка данных из файла CSV
-df = pd.read_csv('dataset_with_random_words.csv')
+df = pd.read_csv('./datasetTemas/random.csv')
 
 # Разделение данных на обучающий и тестовый наборы
 X_train, X_test, y_train, y_test = train_test_split(df['message'], df['label'], test_size=0.2, random_state=42)
@@ -32,13 +32,14 @@ print('Accuracy:', accuracy)
 # import pandas as pd
 # import numpy as np
 # import tensorflow as tf
+# print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
 # from sklearn.model_selection import train_test_split
 # from sklearn.preprocessing import LabelEncoder
 # from tensorflow.keras.preprocessing.text import Tokenizer
 # from tensorflow.keras.preprocessing.sequence import pad_sequences
 
 # # Загрузка данных из файла CSV
-# df = pd.read_csv('dataset_with_random_words.csv')
+# df = pd.read_csv('./datasetTemas/random.csv')
 
 # # Преобразование меток классов в числовой формат
 # label_encoder = LabelEncoder()
@@ -46,6 +47,8 @@ print('Accuracy:', accuracy)
 
 # # Разделение данных на обучающий и тестовый наборы
 # X_train, X_test, y_train, y_test = train_test_split(df['message'], df['label'], test_size=0.2, random_state=42)
+
+# print(y_test)
 
 # # Преобразование текста в числовой формат с помощью токенизатора
 # tokenizer = Tokenizer()
@@ -86,7 +89,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score
 
 # Загрузка данных из файла CSV
-df = pd.read_csv('dataset_with_random_words.csv')
+df = pd.read_csv('./datasetTemas/random.csv')
 
 # Разделение данных на обучающий и тестовый наборы
 X_train, X_test, y_train, y_test = train_test_split(df['message'], df['label'], test_size=0.2, random_state=42)
@@ -117,7 +120,7 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score
 
 # Загрузка данных из файла CSV
-df = pd.read_csv('dataset_with_random_words.csv')
+df = pd.read_csv('./datasetTemas/random.csv')
 
 # Разделение данных на обучающий и тестовый наборы
 X_train, X_test, y_train, y_test = train_test_split(df['message'], df['label'], test_size=0.2, random_state=42)
@@ -126,7 +129,7 @@ X_train, X_test, y_train, y_test = train_test_split(df['message'], df['label'], 
 vectorizer = CountVectorizer()
 X_train_counts = vectorizer.fit_transform(X_train)
 X_test_counts = vectorizer.transform(X_test)
-print(X_train_counts)
+# print(X_train_counts)
 
 # Обучение модели дерева принятия решений
 dt_model = DecisionTreeClassifier()
@@ -138,6 +141,8 @@ y_pred = dt_model.predict(X_test_counts)
 # Оценка точности модели
 accuracy = accuracy_score(y_test, y_pred)
 print('Accuracy:', accuracy)
+
+
 
 
 

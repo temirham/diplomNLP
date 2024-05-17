@@ -14,9 +14,9 @@ def generate_dataset(tokens, label):
     return df
 
 # Пример использования функции
-tokens = ['диаметр отверстие', 'толщина', 'диаметр головка', 'ширина по плоскость', 'обозначение резьба', 'гайка']
-label = 'гайка'
+tokens = ['болт', 'диаметр резьбового вала', 'длина вала без резьбы', '	длина головы', 'ширина по плоскостям', 'диаметр головки', 'длина без учета головы', 'Обозначение резьбы']
+label = 'болт'
 df = generate_dataset(tokens, label)
 
 # Сохраняем датасет в файл CSV
-df.to_csv('./datasetTemas/nut.csv', index=False)
+df.to_csv('./datasetTemas/bolt.csv', index=False)
